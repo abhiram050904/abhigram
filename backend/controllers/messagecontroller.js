@@ -114,7 +114,7 @@ const deletemessage=async(req,res)=>{
         }
 
         
-        await message.findByIdAndDelete(messageId);
+        await message.deleteOne();
         res.status(200).json({message:"Message deleted successfully"});
 
     }
