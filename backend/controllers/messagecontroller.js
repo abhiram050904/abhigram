@@ -113,7 +113,8 @@ const deletemessage=async(req,res)=>{
             await cloudinary.uploader.destroy(publicId);
         }
 
-        await message.remove();
+        
+        await message.findByIdAndDelete(messageId);
         res.status(200).json({message:"Message deleted successfully"});
 
     }
